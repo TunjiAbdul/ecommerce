@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="display"></div>
+</body>
+</html>
+
+<script>
+    let display = document.getElementById("display")
+    // let arrJoke = JSON.parse(localStorage.getItem("newjokes"))
+    // let arrJoke = JSON.parse(localStorage.getItem("newjokes")) || []
+
+
+
+    fetch("https://v2.jokeapi.dev/joke/Any?amount=10")
+    .then( (response) => response.json())
+    //  .then((data) => console.log(data))
+    .then((data) => {
+        console.log(data.jokes)
+        let jokes = data.jokes
+        console.log(jokes)
+        localStorage.setItem("allJokes" , JSON.stringify(jokes))
+        jokes.map((e) => {
+            let id = e.id
+            display.innerHTML += ` <p> ${e.setup}  </p><button onclick="show(${id})" id=${id}> view more</button>`
+            
+        })
+    }
+    
+    )
+
+function show(id){
+localStorage.setItem("jokeId", id)
+window.location.href = "newpage.html" 
+
+}
+
+
+
+
+   
+
+
+
+</script>

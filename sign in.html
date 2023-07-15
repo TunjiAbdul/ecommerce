@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="icofont/icofont.min.css">
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+    }
+
+    .container{
+        padding: 10px;
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        background-image: url(./black\ background.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+
+    .sub-cont{
+        width: 30%;
+        height: fit-content;
+        /* backdrop-filter: blur(5px);  */
+        border-radius: 20px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        /* background-color: #f28b314a; */
+    }
+
+    .sub-cont img:nth-child(1){
+        height: 80px;
+        width: 80px;
+        margin-left: 170px;
+    }
+
+    .sub-cont h3{
+        margin-left: 130px;
+    }
+
+    .sub-cont p{
+        width: 80%;
+        margin-left: 50px;
+        text-align: justify;
+        text-align-last: center;
+    }
+
+    .sub-cont input{
+        height: 50px;
+        border-radius: 5px;
+        padding-inline: 10px;
+        font-size: 15px;
+        background-color: white;
+        border: 1px solid #00000052;
+        outline: #00000052;
+    }
+
+    .sub-cont input:hover{
+        border: 1px solid #da7a26;
+        transition: 0.4s ease-in;
+    }
+
+    .sub-cont button:nth-child(5){
+        background-color: #f28a31;
+        height: 50px;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    .sub-cont button:nth-child(5):hover{
+        background-color: #da7a26;
+        transition: 0.3s ease-in;
+    }
+
+    .sub-cont button:nth-child(6){
+        height: 50px;
+        background-color: #1877F2;
+        height: 50px;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+        margin-top: 30px;
+        cursor: pointer;
+    }
+
+    .sub-cont button:nth-child(6):hover{
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.373);
+        transition: 0.3s ease-in;
+    }
+    
+
+
+    .sub-cont button:nth-child(7){
+        height: 50px;
+        background-color: black;
+        height: 50px;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+        margin-top: 0px;
+        cursor: pointer;
+    }
+
+    .sub-cont button:nth-child(7):hover{
+        background-color: #000000db;
+        transition: 0.3s ease-in;
+    }
+
+    .sub-cont img:nth-child(9){
+        height: 50px;
+        width: 50%;
+        margin-left: 100px;
+    }
+    
+
+</style>
+<body>
+    <div class="container">
+        <div class="sub-cont">
+            <img src="./star.png" alt="">
+            <h3>Welcome to Jumia</h3>
+            <p>Type your e-mail or phone number to log in or create a jumia account</p>
+            <input id="input" type="text" placeholder="Email or Mobile Number">
+            <button onclick="next()">Continue</button>
+            <button><i class="icofont-facebook"></i> Log in with Facebook</button>
+            <button><i class="icofont-brand-apple"></i> Log in with Apple</button>
+            <p>For further support, you may visit the Help Center or contact our customer service team.
+            </p>
+            <img src="./jumialogo.png" alt="">
+        </div>
+    </div>
+</body>
+<script>
+    let input = document.getElementById("input")
+    let arr = JSON.parse(localStorage.getItem("firstInfo")) || []
+    let pageChecker = sessionStorage.getItem("pageChecker");
+
+    if (pageChecker) {
+        input.value = arr[arr.length - 1].input;
+    }
+
+    const next =()=>{
+
+        if (input.value === ""){
+            alert("Input cannot be empty")
+        } 
+        else{
+            let cont = {
+                input:input.value
+            }
+
+            if ( pageChecker ) {
+                arr.pop();
+                arr.push(cont);
+                let newArr = JSON.stringify(arr)
+                localStorage.setItem("firstInfo", newArr);
+            } else {
+                arr.push(cont);
+                let newArr = JSON.stringify(arr)
+                localStorage.setItem("firstInfo", newArr);
+            }
+            window.location.href = "create account.html"
+        }
+    }
+</script>
+</html>

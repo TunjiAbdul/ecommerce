@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="icofont/icofont.min.css">
+</head>
+<style>
+      *{
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+    }
+
+    .container{
+        padding: 10px;
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        background-image: url(./black\ background.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+
+    .sub-cont{
+        width: 30%;
+        height: fit-content;
+        /* backdrop-filter: blur(5px);  */
+        border-radius: 20px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        /* background-color: #f28b314a; */
+    }
+
+    .sub-cont img:nth-child(1){
+        height: 80px;
+        width: 80px;
+        margin-left: 170px;
+    }
+
+
+    .sub-cont h3{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .firstP{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #email{
+        height: 25px;
+        /* width: 0%; */
+        border: none;
+        background-color: #8080801c;
+        padding: 5px;
+        font-size: 15px;
+        padding: 15px;
+        display: flex;
+        
+    }
+
+    .edit{
+        height: 30px;
+        /* background-color: red; */
+        width: 50px;
+        z-index: 33;
+        margin-left: 250px;
+        color: #f28a31;
+        font-size: 15px;
+        border: none;
+        cursor: pointer;
+
+    }
+
+    .pass input{
+        height: 30px;
+        width: 95%;
+        border-radius: 5px;
+        outline: none;
+        border: 1px solid #808080a7;
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .pass button{
+        font-size: 20px;
+        /* margin-left: -50px; */
+        border: none;
+        background-color: white;
+        
+    }
+
+    #btn1{
+        margin-left: -50px ;
+    }
+    #btn2{
+        margin-left: -50px;
+        display: none;
+
+    }
+
+    #btn3{
+        margin-left: -50px;
+    }
+
+    #btn4{
+        margin-left: -50px;
+        display: none;
+    }
+
+    .sub-cont > button{
+        height: 50px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        background-color: #f28a31;
+        color: white;
+        cursor: pointer;
+    }
+
+    .sub-cont > button:hover{
+        box-shadow: 0 0 15px #00000033;
+    }
+
+    .sub-cont > p{
+        text-align: justify;
+        text-align-last: center;
+    }
+
+
+    .sub-cont img:nth-child(9){
+        height: 50px;
+        width: 200px;
+        margin-left: 110px;
+    }
+
+</style>
+<body>
+   <div class="container">
+        <div class="sub-cont">
+            <img src="./star.png" alt="">
+            <h3>Create your account</h3>
+            <div class="firstP">
+                <p>Let's get started by creating your account.</p>
+                <p>To keep your account safe, we need a strong password</p> 
+            </div>
+            <div id="email">
+                
+            </div>
+            <div class="pass">
+                <input id="input2" type="password" placeholder="Password">
+                <button id="btn1" onclick="show()"><i class="icofont-eye"></i></button>
+                <button id="btn2" onclick="hide()"><i class="icofont-eye-blocked"></i></button>
+            </div>
+            <div class="pass">
+                <input id="input3" type="password" placeholder="Confirm Password">
+                <button id="btn3" onclick="showing()"><i class="icofont-eye"></i></button>
+                <button id="btn4" onclick="hiding()"><i class="icofont-eye-blocked"></i></button>
+            </div>
+            <button onclick="nextPage()">Continue</button>
+            <p>For further support, you may visit the help center or contact our customer seervice team.</p>
+            <img src="./jumialogo.png" alt="">
+        </div>
+   </div> 
+</body>
+<script>
+    let email = document.getElementById("email")
+    let password = document.getElementById("input2")
+    let input3 = document.getElementById("input3")
+    let btn1 = document.getElementById("btn1")
+    let btn2 = document.getElementById("btn2")
+    let btn3 = document.getElementById("btn3")
+    let btn4 = document.getElementById("btn4")
+    let array = JSON.parse(localStorage.getItem("firstInfo")) || []
+
+    const show =()=>{
+        btn1.style.display = "none"
+        btn2.style.display = "inline"
+        password.type = "text"
+    }
+
+    const hide =()=>{
+        btn1.style.display = "inline"
+        btn2.style.display = "none"
+        password.type = "password"
+    }
+
+    const showing =()=>{
+        btn3.style.display = "none"
+        btn4.style.display = "inline"
+        input3.type = "text"
+    }
+    
+    const hiding =()=>{
+        btn3.style.display = "inline"
+        btn4.style.display = "none"
+        input3.type = "password"
+    }
+
+    let savedEmail = JSON.parse(localStorage.getItem("firstInfo"))
+    email.innerHTML += `${savedEmail[savedEmail.length - 1].input} <button class="edit" onclick=handlePageCheck()>Edit</button>`
+
+    function handlePageCheck () {
+        sessionStorage.setItem("pageChecker", "true");
+        window.location.href = "sign in.html"
+    }
+
+    const nextPage =()=>{
+        if (password.value === ""){
+            alert("Input cannot be empty")
+        } else if (input3.value === ""){
+            alert ("Input cannot be empty")
+        } else if (password.value !== input3.value){
+            alert("Password does not match")
+        }
+        else{
+            let pass ={
+                input2:input2.value,
+                input3:input3.value
+            }
+            array.push(pass)
+            let confirmedPassword = JSON.stringify(array)
+            localStorage.setItem("firstInfo", confirmedPassword);
+            alert("Password saved successfully")
+            window.location.href = "personal details.html"
+        }
+    }
+
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <div id="h2"></div>
+</body>
+<script>
+    display = document.getElementById("h2")
+    let id = localStorage.getItem("jokeId")
+    let allJokes = JSON.parse(localStorage.getItem("allJokes"))
+
+let found = allJokes.find((e) => e.id == id)
+console.log(found)
+console.log(id)
+
+if (found){
+    display.innerHTML = `
+    <h3> JOKE: ${found.setup}</h3>
+    <p> ANSWER: ${found.delivery}</p>
+    <p> TYPE: ${found.type}</p>
+    `
+}
+</script>
+</html>
+

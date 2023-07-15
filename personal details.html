@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>personal Details</title>
+</head>
+<style>
+
+   *{
+        padding: 0;
+        margin: 0;
+        text-decoration: none;
+    }
+    .container{
+        padding: 10px;
+        display: flex;
+        min-height: 100vh;
+        align-items: center;
+        justify-content: center;
+        background-image: url(./black\ background.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+    }
+    
+    .sub-cont{
+        width: 30%;
+        height: fit-content;
+        /* backdrop-filter: blur(5px);  */
+        border-radius: 20px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        /* background-color: #f28b314a; */
+    }
+
+    .sub-cont img:nth-child(1){
+        height: 80px;
+        width: 80px;
+        margin-left: 170px;
+    }
+
+
+    .sub-cont h3{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sub-cont p{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 17px
+    }
+
+    #firstName{
+        height: 50px;
+        border: 1px solid #00000057;
+        border-radius: 5px;
+        padding-inline: 10px;
+        font-size: 16px;
+        outline: none;
+
+    }
+
+
+    #lastName{
+        height: 50px;
+        border: 1px solid #00000057;
+        border-radius: 5px;
+        padding-inline: 10px;
+        font-size: 16px;
+        outline: none;
+    }
+
+
+    #phoneNumber{
+        height: 50px;
+        border: 1px solid #00000057;
+        border-radius: 5px;
+        padding-inline: 10px;
+        font-size: 16px;
+        outline: none;
+
+    }
+
+    .sub-cont button{
+        height: 50px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        background-color: #f28a31;
+        color: white;
+        cursor: pointer;
+    }
+
+    .sub-cont > button:hover{
+        box-shadow: 0 0 15px #00000033;
+    }
+
+    .sub-cont > p{
+        text-align: justify;
+        text-align-last: center;
+    }
+
+
+    .sub-cont img:nth-child(9){
+        height: 50px;
+        width: 200px;
+        margin-left: 110px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="sub-cont">
+            <img src="./star.png" alt="">
+            <h3>Personal Details</h3>
+            <p>We just need you to fill in some details.</p>
+            <input id="firstName" type="text" placeholder="First Name*">
+            <input id="lastName" type="text" placeholder="Last Name*">
+            <input id="phoneNumber" type="text" placeholder="Phone Number*">
+            <button onclick="nextPage()">Continue</button>
+            <p>For further support, you may visit the Help Center or contact our customer service team.</p>
+            <img src="./jumialogo.png" alt="">
+        </div>
+    </div>
+</body>
+<script>
+    let firstName = document.getElementById("firstName")
+    let lastName = document.getElementById("lastName")
+    let phoneNumber = document.getElementById("phoneNumber")
+    let array = JSON.parse(localStorage.getItem("firstInfo")) || []
+
+    const nextPage =()=>{
+
+        if (firstName.value ===""){
+            alert("Input cannot be empty")
+        }else if (lastName.value ===""){
+            alert("Input cannot be empty")
+        }else if (phoneNumber.value ===""){
+            alert("Input cannot be empty")
+        }
+        else{
+            let personalDetails = {
+            firstName:firstName.value,
+            lastName:lastName.value,
+            phoneNumber:phoneNumber.value
+        }
+        array.push(personalDetails)
+        let details = JSON.stringify(array)
+        localStorage.setItem("firstInfo", details);
+        alert("Your account has been created Successfully!")
+        window.location.href = "index.html"
+        }
+        
+
+        
+    }
+</script>
+</html>
