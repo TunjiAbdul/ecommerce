@@ -30,7 +30,10 @@
     </div>
 
     <div class="cont2">
-        <img src="./jumialogo.png" alt="">
+        <a href="index.html">
+            <img src="./jumialogo.png" alt="">
+
+        </a>
         <div class="sec">
             <div class="div">
                 <input type="text" placeholder="Search products, brands and categories">
@@ -40,13 +43,12 @@
             <div class="inner">
                 <div class="acc">
                     <i class="icofont-ui-user"></i>
-                    <p>Account</p>
-                    <i id="up" class="icofont-rounded-down"></i>
+                    <P >Account</P>                    <i id="up" class="icofont-rounded-down"></i>
                     <!-- <i id="down" class="icofont-rounded-up"></i> -->
                 </div>
                 <div class="signing">
                     <div class="sign">
-                        <button>SIGN IN</button>
+                        <button onclick="signIn()" id="signIn" >SIGN IN</button>
                     </div>
                     <div class="my">
                         <i class="icofont-user-alt-3"></i>
@@ -81,10 +83,11 @@
                 </div>
             </div>
             
-            <div class="acc">
+            <a href="cartpage2.html" class="acc">
                 <i class="icofont-cart"></i>
                 <p>Cart</p>
-            </div>
+                (<p id="count"></p>)
+            </a>
         </div>
     </div>
 
@@ -149,12 +152,13 @@
 
         <section class="sect_2">
             <h3>Top selling items</h3>
-            <div id="firstColumn"></div>
-           
+            <div id="firstColumn">
+               
+            </div>
            
         </section>
 
-        <section class="sect_3">
+        <!-- <section class="sect_3">
             <h3>Top selling items</h3>
             <div id="firstColumn"></div>
            
@@ -166,12 +170,12 @@
             <div id="firstColumn"></div>
            
            
-        </section>
+        </section> -->
     </section>
 
 
 
-    <script src="index.js" type="module"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>

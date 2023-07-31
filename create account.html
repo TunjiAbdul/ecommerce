@@ -234,6 +234,7 @@
             let confirmedPassword = JSON.stringify(array)
             localStorage.setItem("firstInfo", confirmedPassword);
             alert("Password saved successfully")
+            isLoggedIn= true;
             window.location.href = "personal details.html"
         }
     }

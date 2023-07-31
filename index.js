@@ -1,38 +1,47 @@
-let firstColumn = document.getElementById("firstColumn");
-    
+    let firstColumn = document.getElementById("firstColumn");
+    let products = {};
+    let utilItem = localStorage.getItem("items");
+    function cartItem (vlad) {
+                let cartProduct = JSON.stringify(products[vlad]);
+                localStorage.setItem("item", cartProduct);
+                window.location.href = 'cartpage.html';
+    };
 
-    fetch("http://localhost:3000/user")
-    .then( (response) => response.json())
-    .then((data) => console.log(data)) 
+    fetch( "http://localhost:3000/user")
+    .then((response) => response.json())
     .then((data) => {
-        let products = data.products
-        // console.log(products)
+        products = data.user
         localStorage.setItem("allProducts", JSON.stringify(products))
-        products.map((e) => {
-            // let id = e.id
+        // console.log(products)
+        products.map((e, idx) => {
             firstColumn.innerHTML += 
-            `<div id="display">
-                <div class="play">
-                    <img class="photo" src=${e.thumbnail}>
-                    <h3 class="title">${e.title} </h3>
-                    <h5 class="price">Price: $${e.price} </h5>
-                    <p class="discount">Discount: ${e.discountPercentage}% </p>
-                    <P class="rating">Rating: ${e.rating} </P>
-                </div> 
-            </div>  `
+            `<div onclick="cartItem(${idx})" id="display">
+                <div class="imageCard">
+                    <img class="photo" src = ${e.image[0]} alt="">
+                </div>
+                <div class="detailCard">
+                    <h3>${e.title} </h3>
+                    
+                    <div class="bottomsect">
+                        <div class="price">₦ ${e.price}</div>
+                       
+                    </div>
+                </div>
+            </div> `
             
         })
+    }) ;
+
+    let sign = document.getElementById("signIn")
+    sign.addEventListener('click', function(){
+        window.location.href = "sign in.html"
     })
 
-    const show =()=>{
-        up.style.display = "inline"
-        down.style.display = "none"
-        signing.style.display = "inline"
-        
-    }
+    // let shoppingCart = json.getItem("shoppingCart")
+    // document.getElementById("count").innerText= shoppingCart.length;
 
-    const hide =()=>{
-        up.style.display = "none"
-        up.style.display = "inline"
-        signing.style.display = "none"
-    }
+
+    let p = document.getElementById("p");
+    let savedUser = localStorage.getItem("firstInfo");
+
+    p.innerHTML = `Hi ${savedUser.firstName}` 

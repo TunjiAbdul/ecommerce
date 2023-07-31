@@ -5,8 +5,282 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./cartpage2.css">
+    <link rel="stylesheet" href="icofont/icofont.min.css">
 </head>
 <body>
-    <h1>I am frank</h1>
+    <div class="container">
+        <div class="cont1">
+            <div class="sell">
+                <i class="icofont-star-shape"></i>
+                <p>Sell on Jumia</p>
+            </div>
+            <div class="jum">
+                <img src="./jumialogo.png" alt="">
+                <p>PAY</p>
+                <p>FOOD</p>
+                <P>PARTY</P>
+                <P>LOGISTICS</P>
+            </div>
+    
+        </div>
+    
+        <div class="cont2">
+            <a href="index.html">
+                <img src="./jumialogo.png" alt="">
+            </a>
+            <div class="sec">
+                <div class="div">
+                    <input type="text" placeholder="Search products, brands and categories">
+                    <i class="icofont-search-2"></i>
+                    <button onclick="clearLS()">SEARCH</button>
+                </div>
+                <div class="inner">
+                    <div class="acc">
+                        <i class="icofont-ui-user"></i>
+                        <p>Account</p>
+                        <i id="up" class="icofont-rounded-down"></i>
+                        <!-- <i id="down" class="icofont-rounded-up"></i> -->
+                    </div>
+                    <div class="signing">
+                        <div class="sign">
+                            <button>SIGN IN</button>
+                        </div>
+                        <div class="my">
+                            <i class="icofont-user-alt-3"></i>
+                            <P>My Account</P>
+                        </div>
+                        <div class="my">
+                            <i class="icofont-briefcase-1"></i>
+                            <p>Orders</p>
+                        </div>
+                        <div class="my">
+                            <i class="icofont-ui-love"></i>
+                            <p>Saved shoppingCart</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="help">
+                    <div class="acc">
+                        <i class="icofont-question-circle"></i>
+                        <p>Help</p>
+                        <p><i class="icofont-rounded-down"></i></p>
+                    </div>
+    
+                    <div class="helpDrop">
+                        <p>Help Center</p>
+                        <p>Place & track order</p>
+                        <p>Order cancellation</p>
+                        <p>Returns & Refunds</p>
+                        <p>Payment & Account</p>
+                        <div class="live">
+                            <button>LIVE CHAT</button>
+                        </div>
+                    </div>
+                </div>
+                <a href="cartpage2.html" class="acc">
+                    <i class="icofont-cart"></i>
+                    <p>Cart</p>
+                    (<p id="count"></p>)
+                </a>
+                
+                    
+                
+            </div>
+        </div>
+
+        <div class="sect1">
+            <div id="leftCont">
+               
+            </div>
+                
+            <div class="rightCont">
+                <div class="topboy">
+                    <div class="summary">
+                        <h3>CART SUMMMARY</h3>
+                    </div>
+                    <div class="subtotal">
+                        <p>Subtotal</p>
+                        <h3 class="subT">₦ 717,410</h3>
+                    </div>
+                    <p>Delivery fees not included yet.</p>
+                    <div class="line"></div>
+                    <button onclick="checkout()" class="total"></button>
+                </div>
+                <div class="bottomboy">
+                    <h2>Returns are easy</h2>
+                    <p>Free return within 15 days for Official Store shoppingCart and 7 days for other eligible shoppingCart </p>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+   
 </body>
+<script src="https://js.paystack.co/v2/inline.js"></script>
+<script>
+    let itemContainer = document.getElementById("leftCont");
+    let subTotaltext = document.querySelector(".subT")
+    let Totaltext = document.querySelector(".total")
+    let shoppingCart= []
+    
+    function clearLS () {
+        localStorage.clear("item");
+        console.log("ole")
+    }
+
+    function summer() {
+        let totalSum = 0;
+        shoppingCart.forEach((elem) => {
+            totalSum = totalSum + (elem.price*elem.counter);
+            console.log(totalSum);
+        })
+        return totalSum;
+    }
+
+    function priceIncrement(vlad) {
+        if (shoppingCart[vlad].counter <= 9) {
+            shoppingCart[vlad].counter = shoppingCart[vlad].counter + 1;
+            console.log(shoppingCart[vlad].counter);
+
+            localStorage.setItem("items", JSON.stringify(shoppingCart));
+            renderer();
+        }
+    }
+
+    function priceDecrement(vlad) {
+        if (shoppingCart[vlad].counter >= 2) {
+            shoppingCart[vlad].counter = shoppingCart[vlad].counter - 1;
+            console.log(shoppingCart[vlad].counter);
+
+            localStorage.setItem("items", JSON.stringify(shoppingCart));
+            renderer();
+        }
+    }
+
+    function handleItemRemoval (idx) {
+        // //splice method
+        // let idxFinder = shoppingCart.findIndex((elem) => (
+        //     elem.title === ele.title
+        // ))
+        // shoppingCart.splice(idxFinder, 1);
+        // localStorage.setItem("items", JSON.stringify(shoppingCart));
+
+        //filter method
+        console.log(shoppingCart);
+        console.log(idx);
+        let utilArr = shoppingCart.filter((elem) => (
+            elem.title !== shoppingCart[idx].title
+        ));
+        console.log(utilArr);
+        shoppingCart = utilArr;
+        localStorage.setItem("items", JSON.stringify(utilArr));
+
+        renderer();
+    }
+
+    function renderer () {
+        const cartProductsJSON = localStorage.getItem("items");
+        if (cartProductsJSON){
+                shoppingCart = JSON.parse(cartProductsJSON);
+                console.log(shoppingCart)
+                itemContainer.innerHTML = `<div class="cart">
+                        <h3>Cart</h3>
+                        (<p id="counting"></p>)
+                    </div>`
+                    if(shoppingCart.length > 0){
+                        shoppingCart.map((ele, idx) => (
+                            itemContainer.innerHTML +=
+                                `
+                                    <div class="itemCntn">
+                                        <div id="items">
+                                            <div class="cartItem">
+                                                <div class="cartDetails">
+                                                <img src=${ele.image[0]} alt="">
+                                                <div class="details">
+                                                    <p>${ele.title}</p>
+                                                    <p>Category: ${ele.category}</p>
+                                                    <p>${ele.rate}</p>
+                                                    <div class="express">
+                                                        <p>JUMIA</p>
+                                                        <p>EXPRESS</p>
+                                                    </div>
+                                                </div>
+                                                            
+                                            </div>
+                                            <div class="cartCost">
+                                                <p>₦ ${ele.price}</p>
+                                            </div>
+                                        </div>
+                                        <div class="remove">
+                                            <div class="bin">
+                                                <i class="icofont-bin"></i>
+                                                <p onclick="handleItemRemoval(${idx})">REMOVE</p>
+                                            </div>
+                                            <div class="addSub">
+                                                    <button onclick="priceDecrement(${idx})">-</button>
+                                                    <p>${ele.counter}</p>
+                                                    <button onclick="priceIncrement(${idx})" >+</button>
+                                            </div>
+                                                    
+                                        
+                                        </div>
+                                    </div>
+                                    
+                                `
+                
+                        ));
+
+                    } else {
+                        itemContainer.innerHTML += 
+                        ` 
+                        <div class="empty">
+                            <p>Your Cart Is Empty!</p>
+                        </div>
+                        `
+                    }
+
+        }            
+        subTotaltext.innerText = `₦ ${summer()}`
+        Totaltext.innerText = `CHECKOUT ( ₦ ${summer()} )`
+            
+           
+        document.getElementById("count").innerText= shoppingCart.length;
+        document.getElementById("counting").innerText= shoppingCart.length;
+         
+    };
+
+    renderer();
+
+    const paystack = new PaystackPop();
+    function checkout(){
+        paystack.newTransaction({
+            key: 'pk_test_b67fe7915d142f38c397909288fc3c763dc669ab',
+            email: 'example@email.com',
+            amount: 10000,
+            onSuccess: (transaction) => { 
+                alert("transaction Complete") 
+            },
+            onCancel: () => {
+                alert("Transaction Failed")
+            }
+        });
+    }
+
+
+    
+    
+
+
+    // function add(price){
+    //     return price + 1
+    // }
+    
+    // const addup = add(1)
+    
+    // console.log(addup)
+
+    
+
+</script>
 </html>

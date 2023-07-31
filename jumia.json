@@ -3,416 +3,476 @@
         {
             "id": 1,
             "title": "Fngeen 05 Calendar Sporty Waterproof Quartz Watch/Black",
-            "price": "#5000",
+            "price": 5000,
             "description": "This watch is waterproof and suitable for outdoor activities of your choice",
             "category": "Watches",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-1%",
+            "oldPrice": 5050,
             "image":[
-                "../product images/fngeen watch1.jpeg",
-                "../product images/fngeen watch2.jpeg",
-                "../product images/fngeen watch3.jpeg",
-                "../product images/fngeen watch4.jpeg"
+                "./productimages/fngeenwatch1.jpeg",
+                "./productimages/fngeenwatch2.jpeg",
+                "./productimages/fngeenwatch3.jpeg",
+                "./productimages/fngeenwatch4.jpeg"
             ]
         },
         {
             "id": 2,
             "title": "ADIDAS Adilette Aqua Slides Unisex",
-            "price": "#13,000",
+            "price": 13000,
             "description": "Rinse off after the pool in these shower-friendly sandals. Keeping it simple, the smooth slip-ons reveal their adidas DNA with signature 3-Stripes. Soft cushioning rewards tired feet with plush comfort.",
             "category": "Slippers",
             "rate": "⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-2%",
+            "oldPrice": 13260,
             "image":  [
-                "../product images/adidas slide1.jpeg",
-                "../product images/adidas slide2.jpeg",
-                "../product images/adidas slide3.jpeg",
-                "../product images/adidas slide4.jpeg",
-                "../product images/adidas slide5.jpeg",
-                "../product images/adidas slide7.jpeg"
+                "./productimages/adidasslide1.jpeg",
+                "./productimages/adidasslide2.jpeg",
+                "./productimages/adidasslide3.jpeg",
+                "./productimages/adidasslide4.jpeg",
+                "./productimages/adidasslide5.jpeg",
+                "./productimages/adidasslide7.jpeg"
             ]
            
         },
         {
             "id": 3,
             "title": "Aihontai 100% Premium Quality Laptop Bag Backpack With USB Charging Port And 9 Compartments School Bag",
-            "price": "#5400",
+            "price": 5400,
             "description": "100% high quality laptop bag backpack with 9 compartments travel bag / school bag / backpack bag for laptop, tablet, cell phone, watch, etc. with high quality zipper and strong stitching",
             "category": "Backpacks",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-0%",
+            "oldPrice": 5400,
             "image":[
-                "../product images/backpack1.jpeg",
-                "../product images/backpack2.jpeg",
-                "../product images/backpack3.jpeg",
-                "../product images/backpack4.jpeg",
-                "../product images/backpack5.jpeg",
-                "../product images/backpack6.jpeg"
+                "./productimages/backpack1.jpeg",
+                "./productimages/backpack2.jpeg",
+                "./productimages/backpack3.jpeg",
+                "./productimages/backpack4.jpeg",
+                "./productimages/backpack5.jpeg",
+                "./productimages/backpack6.jpeg"
             ]
         },
         {
             "id": 4,
             "title": " Samsung Galaxy A23 6.6 4GB RAM/64GB ROM Android 12 - Blue",
-            "price": "#145 600",
+            "price": 145600,
             "description": "Display 6.6-inch FHD+ (2408 × 1080) 20: 9, TFT, Gorilla Glass 5OS Android 12 (One UI 4.1)Processor 2.4GHz Octa-coreStorage 4GB/64GB (microSD compatible up to 1TB)Camera Quad 50MP + 5MP + 2MP + 2MP Rear/8MP FrontBattery 5000mAh (25W quick charge)",
             "category": "Phones",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-3%",
+            "oldPrice":149968,
             "image":[
-                "../product images/samphone1.jpeg",
-                "../product images/samphone2.jpeg",
-                "../product images/samphone3.jpeg",
-                "../product images/samphone4.jpeg",
-                "../product images/samphone5.jpeg",
-                "../product images/samphone6.jpeg"
+                "./productimages/samphone1.jpeg",
+                "./productimages/samphone2.jpeg",
+                "./productimages/samphone3.jpeg",
+                "./productimages/samphone4.jpeg",
+                "./productimages/samphone5.jpeg",
+                "./productimages/samphone6.jpeg"
             ]
         },
         {
             "id": 5,
             "title": "Lenovo V15-IGL - Celeron N4020 4GB 256GB - FreeDOS ",
-            "price": "#129 800",
+            "price": 129800,
             "description": "LENOVO V15- Celeron 4GB DDR4-2133 SDRAM-256GB SSD DRIVE-15.6-INTEL INTEGRATE UHD-HD (1366X786) ANTIGLARE DISPLAY-CAMERA WI-FI BLUETOOTH-",
             "category": "Laptop",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-2%",
+            "oldPrice": 132396,
             "image":[
-                "../product images/laptop1",
-                "../product images/laptop2",
-                "../product images/laptop3",
-                "../product images/laptop4",
-                "../product images/laptop5"
+                "./productimages/laptop1.jpeg",
+                "./productimages/laptop2.jpeg",
+                "./productimages/laptop3.jpeg",
+                "./productimages/laptop4.jpeg",
+                "./productimages/laptop5.jpeg"
             ]
         },
         {
             "id": 6,
             "title": "Edifier W800BT Plus V5.1 40mm Wireless Bluetooth Headphone",
-            "price": "#18 990",
+            "price": 18990,
             "description": "Featuring bluetooth v5.1 and upgraded Qualcomm QCC3024 chipset, the power consumption is lowered resulting in longer playback, and a faster and more stable transmission.",
             "category": "Accessories",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-2%",
+            "oldPrice": 19369.98,
             "image":[
-                "../product images/headphone1",
-                "../product images/headphone2",
-                "../product images/headphone3",
-                "../product images/headphone4",
-                "../product images/headphone5",
-                "../product images/headphone6"
+                "./productimages/headphone1.jpeg",
+                "./productimages/headphone2.jpeg",
+                "./productimages/headphone3.jpeg",
+                "./productimages/headphone4.jpeg",
+                "./productimages/headphone5.jpeg",
+                "./productimages/headphone6.jpeg"
             ]
         },
         {
             "id": 7,
             "title": "Oraimo 27000mAh Power-Bank OPB-P271D",
-            "price": "#15 590",
+            "price": 15590,
             "description": "One charge for one week. Brimming with 27000mAh of pure power-charges most phones over 6 times.",
             "category": "Power bank",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-0%",
+            "oldPrice": 15590,
             "image":[
-                "../product images/pb1", 
-                "../product images/pb2", 
-                "../product images/pb3", 
-                "../product images/pb4", 
-                "../product images/pb5", 
-                "../product images/pb6"
+                "./productimages/pb1.jpeg", 
+                "./productimages/pb2.jpeg", 
+                "./productimages/pb3.jpeg", 
+                "./productimages/pb4.jpeg", 
+                "./productimages/pb5.jpeg", 
+                "./productimages/pb6.jpeg"
             ]
         },
         {
             "id": 8,
-            "title": "T&G Portable Bluetooth Speaker - Subwoofer - Long Standby",
-            "price": "#4 845",
-            "description": "The stable connection lets you never miss a beat. It can help provide high-fidelity sound, allowing you to enjoy lossless sound quality",
-            "category": "Portable blutooth speaker",
+            "title": "Men Vintage Short Sleeve Stand Collar Shirt-Red",
+            "price": 3000,
+            "description": "Men's ethnic style top.",
+            "category": "Men's fashion",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-2%",
+            "oldPrice": 3051,
             "image":[
-                "../product images/bluethoot speaker1", 
-                "../product images/bluethoot speaker2", 
-                "../product images/bluethoot speaker3", 
-                "../product images/bluethoot speaker4", 
-                "../product images/bluethoot speaker5", 
-                "../product images/bluethoot speaker6"
+                "./productimages/shirt1.jpeg", 
+                "./productimages/shirt2.jpeg", 
+                "./productimages/shirt3.jpeg", 
+                "./productimages/shirt4.jpeg", 
+                "./productimages/shirt5.jpeg",
+                "./productimages/shirt6.jpeg"
             ]
         },
         {
             "id": 9,
             "title": "Sony Playstation 5 (PS5) Console - Standard Edition (Japan)",
-            "price": "#399 999",
+            "price": 399999,
             "description": "One of the major new features of the PS5 is the next generation solid state storage, and it's also the aspect Cerny spent most time talking about.",
             "category": "Playstation",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-5%",
+            "oldPrice":419998.95,
             "image":[
-                "../product images/playstation1", 
-                "../product images/playstation2", 
-                "../product images/playstation3", 
-                "../product images/playstation4", 
-                "../product images/playstation5", 
-                "../product images/playstation6" 
+                "./productimages/playstation1.jpeg", 
+                "./productimages/playstation2.jpeg", 
+                "./productimages/playstation3.jpeg", 
+                "./productimages/playstation4.jpeg", 
+                "./productimages/playstation5.jpeg", 
+                "./productimages/playstation6.jpeg" 
             ]
         },
         {
             "id": 10,
             "title": "Crocs Unisex Fashion Foot Wear/ Waterproof Beach Wear For Outdoor - Green",
-            "price": "₦ 7,388",
+            "price":  7388,
             "description": "Unisex Clog Beachwear ShoesGood for outdoor and Beach activitiesLovely foot wear Unique Design Unisex Trendy latest new Clog Shoes.",
             "category": "Crocs",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-0%",
+            "oldPrice":7388,
             "image":[
-                "../product images/crocs1", 
-                "../product images/crocs2", 
-                "../product images/crocs3"
+                "./productimages/crocs1.jpeg", 
+                "./productimages/crocs2.jpeg", 
+                "./productimages/crocs3.jpeg"
                 
             ]
         },
         {
             "id": 11,
             "title": "Philips PerfectCare PowerLife Steam Iron (GC3920/26) - Blue",
-            "price": "₦ 62,536",
+            "price": 62536,
             "description": "Iron everything from silk to jeans without adjusting the temperature.",
             "category": "Home and Office",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":6378672,
+            "oldPrice":"",
             "image":[
-                "../product images/iron1", 
-                "../product images/iron2", 
-                "../product images/iron3", 
-                "../product images/iron4", 
-                "../product images/iron5"
+                "./productimages/iron1.jpeg", 
+                "./productimages/iron2.jpeg", 
+                "./productimages/iron3.jpeg", 
+                "./productimages/iron4.jpeg", 
+                "./productimages/iron5.jpeg"
             ]
         },
         {
             "id": 12,
             "title": "Binatone 16 Inches Standing Fan (A1691) - Black +1 Year Warranty",
-            "price": "₦ 19,699",
+            "price": 19699,
             "description": "This is fan is a onetime investment and is perfect for domestic use. This is one of Binatone most sturdy models. It can revolve 360 degrees and its height is adjustable to 1.5m. It motor runs silently as to not disturb you while sleeping or otherwise",
             "category": "Home and office",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-0%",
+            "oldPrice":19699,
             "image":[
-                "../product images/fan1",
-                "../product images/fan2"  
+                "./productimages/fan1.jpeg",
+                "./productimages/fan2.jpeg"  
             ]
         },
         {
             "id": 13,
             "title": "Trendy Men's Casual Shoes Glossy Leather Running Sneakers - Black",
-            "price": "₦ 7,990",
+            "price": 7990,
             "description": "The shoes are Black fashion sneakers,outdoor athletic footwear,trend casual shoes for leisure time,loved by men and women",
             "category": "Men's fashion",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-0%",
+            "oldPrice":7990,
             "image":[
-                "../product images/shoe1",
-                "../product images/shoe2",
-                "../product images/shoe3",
-                "../product images/shoe4",
-                "../product images/shoe5",
-                "../product images/shoe6"
+                "./productimages/shoe1.jpeg",
+                "./productimages/shoe2.jpeg",
+                "./productimages/shoe3.jpeg",
+                "./productimages/shoe4.jpeg",
+                "./productimages/shoe5.jpeg",
+                "./productimages/shoe6.jpeg"
             ]
         },
         {
             "id": 14,
             "title": "Defacto Man Knitted Regular Fit Polo T-Shirt -Purple",
-            "price": "₦ 7,829",
+            "price": 7829,
             "description": "We set off to bring a fresh new perspective to Turkish fashion and bring together our brand new, quality and unique designs with consumers at four corners of the World",
             "category": "Men's fashion",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-0%",
+            "oldPrice":7829,
             "image":[
-                "../product images/blackguy1",
-                "../product images/blackguy2",
-                "../product images/blackguy3",
-                "../product images/blackguy4"
+                "./productimages/blackguy1.jpeg",
+                "./productimages/blackguy2.jpeg",
+                "./productimages/blackguy3.jpeg",
+                "./productimages/blackguy4.jpeg"
             ]
         },
         {
             "id": 15,
             "title": "Six Pieces-in-1 Quality Ankle Socks",
-            "price": "₦ 1,200",
+            "price": 1200,
             "description": "The 6 Pieces (3Pairs)  ankle socks are produced from cotton rich fabric. Designed to protect the feet from the effect of the harshness of shoe on the feet, warm and cold weathers.",
             "category": "Clothing",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-0%",
+            "oldPrice":1200,
             "image":[
-                "../product images/socks1",
-                "../product images/socks2"
+                "./productimages/socks1.jpeg",
+                "./productimages/socks2.jpeg"
             ]
         },
         {
             "id": 16,
             "title": "Jones Wears Marshmello Printed Hoodie -Black",
-            "price": " ₦ 9,130",
+            "price": 9130,
             "description": "Our Hoodies are made for extreme Comfort, fitted with pristine precision and finely crafted with the highest quality fabric.",
             "category": "Men's fashion",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-2%",
+            "oldPrice":9312.6,
             "image":[
-                "../product images/hood1",
-                "../product images/hood2"
+                "./productimages/hood1.jpeg",
+                "./productimages/hood2.jpeg"
             ]
         },
         {
             "id": 17,
             "title": "Rechargeable Metal Simple Style Hair Clipper Black Gold",
-            "price": "₦ 3,950",
+            "price":  3950,
             "description": "Sharp, Large capacity batter, Strong power, Reduce noise, Fast charge, Sustainable",
             "category": "Hair Care",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-0%",
+            "oldPrice":3950,
             "image":[
-                "../product images/clipper1",
-                "../product images/clipper2",
-                "../product images/clipper3",
-                "../product images/clipper4",
-                "../product images/clipper5",
-                "../product images/clipper6"
+                "./productimages/clipper1.jpeg",
+                "./productimages/clipper2.jpeg",
+                "./productimages/clipper3.jpeg",
+                "./productimages/clipper4.jpeg",
+                "./productimages/clipper5.jpeg",
+                "./productimages/clipper6.jpeg"
             ]
         },
         {
             "id": 18,
             "title": "Hisense 20 Litres Microwave - Black + Digital, Mechanical control, Defrost Function, 6 Power Levels.",
-            "price": "₦ 41,688",
+            "price": 41688,
             "description": "Hisense microwave technology ensures that your food undergoes a more even heating experience through the microwave's Echo Reflection Design.",
             "category": "Home Appliances",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-0%",
+            "oldPrice":41688,
             "image":[
-                "../product images/microwave1",
-                "../product images/microwave2",
-                "../product images/microwave3"
+                "./productimages/microwave1.jpeg",
+                "./productimages/microwave2.jpeg",
+                "./productimages/microwave3.jpeg"
             ]
         },
         {
             "id": 19,
             "title": "Hisense 5kg Top Load Twin Tub Washing Machine (WM503-WSPA) With One Year Warranty.",
-            "price": "₦ 77,760",
+            "price": 77760,
             "description": "The Hisense WSPA503 twin tub semi-automatic washing machine comes with a spin dryer. Featuring a wash and spin capacity of 5kg, a water-proof and rust-proof full plastic body. It also features a water selector, lint filter and a user friendly control panel. ",
             "category": "Home Appliances",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-0%",
+            "oldPrice":77760,
             "image":[
-                "../product images/washingmachine1",
-                "../product images/washingmachine2",
-                "../product images/washingmachine3",
-                "../product images/washingmachine4"
+                "./productimages/washingmachine1.jpeg",
+                "./productimages/washingmachine2.jpeg",
+                "./productimages/washingmachine3.jpeg",
+                "./productimages/washingmachine4.jpeg"
             ]
         },
         {
             "id": 20,
             "title": "Haier Thermocool 2.5kVA/2.0kW Single Phase Petrol Electric start Generator (BOBO 2800ES)",
-            "price": "₦ 214,920",
+            "price": 214920,
             "description": "This powerful Haier Thermocool 2.5KVA 2KW Single phase petrol generator Bobo 2800ES is the generator for you. It is portable, fuel efficient and built with 100% copper coil so you know you are getting the best of the best. The automatic voltage regulator changes voltage automatically to maintain the engine’s optimal performance with low noise.",
             "category": "Home and Office",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-0%",
+            "oldPrice":214920,
             "image":[
-                "../product images/generator1",
-                "../product images/generator2",
-                "../product images/generator3",
-                "../product images/generator4",
-                "../product images/generator5",
-                "../product images/generator6"
+                "./productimages/generator1.jpeg",
+                "./productimages/generator2.jpeg",
+                "./productimages/generator.jpeg3",
+                "./productimages/generator4.jpeg",
+                "./productimages/generator5.jpeg",
+                "./productimages/generator6.jpeg"
             ]
         },
         {
             "id": 21,
             "title": "Super Vision Solar Generator 20w With 6 Bulbs And One Free Inverter",
-            "price": "₦ 95,000",
+            "price": 95000,
             "description": "Fan in, TV in, bulb light in (6 points ), DC 12V output socket, Solar input, Battery level indicator in %, DC 5V output, 15W poly solar panel, a pack for 6 bu;lbs and other plugs. ",
             "category": "Generators and Portable Power",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-0%",
+            "oldPrice":95000,
             "image":[
-                "../product images/inverter"
+                "./productimages/inverter.jpeg"
             ]
         },
         {
             "id": 22,
             "title": "SHARE THIS PRODUCT Djack 2.1ch HOME THEATRE SYSTEM WITH BLUETOOTH",
-            "price": "₦43,850",
+            "price": 43850,
             "description": "ManualRemoteHome TheaterSpeakersAccessories",
             "category": "Home Audio",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-0%",
+            "oldPrice":43850,
             "image":[
-                "../product images/deck1",
-                "../product images/deck2"
+                "./productimages/deck1.jpeg",
+                "./productimages/deck2.jpeg"
             ]
         },
         {
             "id": 23,
             "title": "Maxi 32 Inches LED HD TV (D2010) - Black +1 Year Warranty",
-            "price": "₦ 64,890",
+            "price": 64890,
             "description": "Experience a whole new level of entertainment with the MAXI 32 inch LED HD TV. Watch your movies and football matches come to live with its new, exquisite design.",
             "category": "Home Appliances",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-0%",
+            "oldPrice":64860,
             "image":[
-                "../product images/tv1",
-                "../product images/tv2",
-                "../product images/tv3",
-                "../product images/tv4"
+                "./productimages/tv1.jpeg",
+                "./productimages/tv2.jpeg",
+                "./productimages/tv3.jpeg",
+                "./productimages/tv4.jpeg"
             ]
         },
         {
             "id": 24,
             "title": "Johnnie Walker Black Label 12 Years 70cl",
-            "price": "₦ 12,900",
+            "price": 12900,
             "description": "Johnnie Walker Black Label is a true icon. Black Label benchmark for all other deluxe blends. Created using only whiskies aged for a minimum of 12 years from the four corners of Scotland.",
             "category": "Grocery",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-2%",
+            "oldPrice":13158,
             "image":[
-                "../product images/johnnie.jpeg"
+                "./productimages/johnnie.jpeg"
             ]
         },
         {
             "id": 25,
             "title": "Devon King'S Cooking Oil 5L",
-            "price": "₦ 7,500",
+            "price": 7500,
             "description": "Frying and cooking with your well-known Devon King’s cooking oil has given you quality assurance over the years. It is now fresher than ever before as it is produced in a world class, CODEX-certified manufacturing environment and it no longer stays on high seas for over 6 months. What’s more, the pack range makes your brand affordable at every price point.",
             "category": "Grocery",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-2%",
+            "oldPrice":7650,
             "image":[
-                "../product images/oil1.jpeg",
-                "../product images/oil2.jpeg"
+                "./productimages/oil1.jpeg",
+                "./productimages/oil2.jpeg"
             ]
         },
         {
             "id": 26,
             "title": "Apple IPad Pro 12.9 M2(2022 Model)Wi-Fi+Cellular-512GB-Space Gray",
-            "price": "₦ 1,100,000",
+            "price": 1100000,
             "description": "Supercharged by M2. Astonishing performance. Incredibly advanced displays. Superfast wireless connectivity. Next-level",
             "category": "Phones and Tablets",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-10%",
+            "oldPrice":1210000,
             "image":[
-                "../product images/ipad.jpeg"
+                "./productimages/ipad.jpeg"
             ]
         },
         {
             "id": 27,
             "title": "Apple IPHONE 11 PRO MAX 64/4GB (12PM+12PM+12PM) 6.5 3969mAh",
-            "price": "₦ 415,000",
+            "price": 415000,
             "description": "Build Front/back glass, stainless steel frame    SIM Single SIM (Nano-SIM and/or Electronic SIM card) or Dual SIM (Nano-SIM, dual stand-by) - for China IP68 dust/water resistant (up to 4m for 30 mins)    Apple Pay (Visa, MasterCard, AMEX certified)",
             "category": "Phones and Tablets",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-5%",
+            "oldPrice":435750,
             "image":[
-                "../product images/iphone11.jpeg"
+                "./productimages/iphone11.jpeg"
             ]
         },
         {
             "id": 28,
             "title": "IPhone X 3GB RAM+64GB(Renewed) -Black",
-            "price": "₦ 163,000",
+            "price": 163000,
             "description": "Build Front/back glass, stainless steel frame    SIM Single SIM (Nano-SIM and/or Electronic SIM card) or Dual SIM (Nano-SIM, dual stand-by) - for China IP68 dust/water resistant (up to 4m for 30 mins)    Apple Pay (Visa, MasterCard, AMEX certified)",
             "category": "Phones and Tablets",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-3%",
+            "oldPrice":167890,
             "image":[
-                "../product images/iphoneX1.jpeg",
-                "../product images/iphoneX2.jpeg"
+                "./productimages/iphoneX1.jpeg",
+                "./productimages/iphoneX2.jpeg"
             ]
         },
         {
             "id": 29,
             "title": "IPhone 6 16GB - (Renewed) Grey - 4.7 Inch",
-            "price": "₦ 39,900",
+            "price": 39900,
             "description": "Build Front/back glass, stainless steel frame    SIM Single SIM (Nano-SIM and/or Electronic SIM card) or Dual SIM (Nano-SIM, dual stand-by) - for China IP68 dust/water resistant (up to 4m for 30 mins)    Apple Pay (Visa, MasterCard, AMEX certified)",
             "category": "Phones and Tablets",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-2%",
+            "oldPrice":40468,
             "image":[
-                "../product images/iphone61.jpeg",
-                "../product images/iphone62.jpeg",
-                "../product images/iphone63.jpeg"
+                "./productimages/iphone61.jpeg",
+                "./productimages/iphone62.jpeg",
+                "./productimages/iphone63.jpeg"
 
             ]
         },
         {
             "id": 30,
             "title": "Apple Iphone XR 64gb Red, Free Pouch And Screen Protector",
-            "price": "₦ 240,000",
+            "price": 240000,
             "description": "Build Front/back glass, stainless steel frame    SIM Single SIM (Nano-SIM and/or Electronic SIM card) or Dual SIM (Nano-SIM, dual stand-by) - for China IP68 dust/water resistant (up to 4m for 30 mins)    Apple Pay (Visa, MasterCard, AMEX certified)",
             "category": "Phones and Tablets",
             "rate":"⭐️ ⭐️ ⭐️ ⭐️ ⭐️",
+            "discount":"-2%",
+            "oldPrice": 244800,
             "image":[
-                "../product images/iphoneXR1.jpeg"
+                "./productimages/iphoneXR1.jpeg"
 
             ]
         }

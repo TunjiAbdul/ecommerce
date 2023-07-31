@@ -31,7 +31,10 @@
     </div>
 
     <div class="cont2">
-        <img src="./jumialogo.png" alt="">
+        <a href="index.html">
+            <img src="./jumialogo.png" alt="">
+
+        </a>
         <div class="sec">
             <div class="div">
                 <input type="text" placeholder="Search products, brands and categories">
@@ -82,57 +85,16 @@
                 </div>
             </div>
             
-            <div class="acc">
+            <a href="cartpage2.html" class="acc">
                 <i class="icofont-cart"></i>
                 <p>Cart</p>
-            </div>
+                (<p id="count"></p>)
+            </a>
         </div>
     </div>
     <section class="sect1">
-        <div class="leftCont">
-            <div class="image">
-                <img src="./shirt.jpeg" alt="">
-                <div class="moreImages">
-                    <img src="./2.jpeg" alt="">
-                    <img src="./3.jpeg" alt="">
-                    <img src="./4.jpeg" alt="">
-                    <img src="./5.jpeg" alt="">
-                    <img src="./6.jpeg" alt="">
-                    <img src="./7.jpeg" alt="">
-                </div>
-                <div class="line"></div>
-                <p>SHARE THIS PRODUCT</p>
-                <div class="social">
-                    <a href=""><button><i class="icofont-facebook"></i></button></a>
-                    <a href=""><button><i class="icofont-twitter"></i></button></a>
-                </div>
-                <div class="report">
-                    <a href="">Report incorrect product information</a>
-                </div>
-            </div>
-            <div class="details">
-                <h3>Men Vintage Short Sleeve Stand Collar Shirt-Red</h3>
-                <div class="line2"></div>
-                <div class="price">
-                    <h3>#3,000</h3>
-                    <p>#3,051</p>
-                    <button>-2%</button>
-                </div>
-                <p>Some variations with low stock</p>
-                <p>⭐️ ⭐️ ⭐️ ⭐️ ⭐︎ (432 verified ratings)</p>
-                <div class="line3"></div>
-                <p>VARIATION AVAILABLE</p>
-                <div class="button">
-                    <button>M</button>
-                    <button>F</button>
-                    <button>XL</button>
-                    <button>XXL</button>
-                    <button>XXXL</button>
-                    <button>XXXXL</button>
-                </div>
-                <button><i class="icofont-cart"></i> ADD TO CART</button>
-                <div class="line4"></div>
-            </div>
+        <div id="leftCont">
+            
             
         </div>
         <div class="rightCont">
@@ -156,4 +118,85 @@
         </div>
     </section>
 </body>
+<script>
+    let leftCont = document.getElementById("leftCont")
+    
+    window.addEventListener("DOMContentLoaded", function(){
+        var cartProductJSON = localStorage.getItem("item");
+        if (cartProductJSON){
+            let product = JSON.parse(cartProductJSON);
+
+                leftCont.innerHTML += `
+                <div class="image">
+                    <img src=${product.image[0]} alt="">
+                    <div class="moreImages">
+                        <img src=${product.image[1]} alt="">
+                        <img src=${product.image[2]} alt="">
+                        <img src=${product.image[3]} alt="">
+                        <img src=${product.image[4]} alt="">
+                        <img src=${product.image[5]} alt="">
+                        <img src=${product.image[6]} alt="">
+                    </div>
+                    <div class="line"></div>
+                    <p>SHARE THIS PRODUCT</p>
+                    <div class="social">
+                        <a href=""><button><i class="icofont-facebook"></i></button></a>
+                        <a href=""><button><i class="icofont-twitter"></i></button></a>
+                    </div>
+                    <div class="report">
+                        <a href="">Report incorrect product information</a>
+                    </div>
+                </div>
+                <div class="details">
+                    <h3>${product.title}</h3>
+                    <div class="line2"></div>
+                    <div class="price">
+                        <h3>₦ ${product.price}</h3>
+                        <p>₦ ${product.oldPrice}</p>
+                        <button>${product.discount}</button>
+                    </div>
+                    <p>Some variations with low stock</p>
+                    <p>${product.rate}(432 verified ratings)</p>
+                    <div class="line3"></div>
+                    <p>VARIATION AVAILABLE</p>
+                    <div class="button">
+                        <button>M</button>
+                        <button>F</button>
+                        <button>XL</button>
+                        <button>XXL</button>
+                        <button>XXXL</button>
+                        <button>XXXXL</button>
+                    </div>
+                    <button onclick="addToCart()"><i class="icofont-cart"></i> ADD TO CART</button>
+                    <div class="line4"></div>
+                    <div class="description">
+                        <h3>Product Description</h3>
+                        <p>${product.description}</p>
+                    </div>
+                    
+                </div>
+                `
+        }
+    })
+    let utilItems = JSON.parse(localStorage.getItem("items") )|| [];
+    let utilItem = JSON.parse(localStorage.getItem("item"));
+
+
+    
+    function addToCart(){
+        let finder = utilItems.find((elem) => (elem.title === utilItem.title));
+        console.log(finder);
+        if (finder) {
+            window.location.href = 'cartpage2.html';
+        } else {
+            let utilObj = utilItem;
+            if (!utilItem.counter) {
+                utilObj = {...utilItem, counter: 1}
+            }
+            let utilArr = [...utilItems, utilObj];
+            localStorage.setItem( "items",JSON.stringify(utilArr));
+            window.location.href = 'cartpage2.html';
+        }
+    };
+</script>
 </html>

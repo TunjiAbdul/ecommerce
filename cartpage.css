@@ -91,11 +91,17 @@
     border: 1px solid black;
     outline: none;
     padding-inline: 30px;
+    font-size: 17px;
+}
+
+.div input:hover{
+    border: 1px solid #f28a31;
+    transition: 0.5s;
 }
 
 .div i{
     position: absolute;
-    left: 19%;
+    left: 19.5%;
     margin-top: 10px;
 }
 
@@ -119,8 +125,8 @@
     gap: 5px;
     font-size: 20px;
     cursor: pointer;
-    /* height: 50px; */
     padding:10px;
+    color: black;
 }
 
 .acc:hover{
@@ -133,7 +139,6 @@
 }
 
 .inner{
-    /* position: relative; */
     display: inline-block;
 }
 
@@ -251,7 +256,7 @@
 
 }
 
-.leftCont{
+#leftCont{
     width: 75%;
     height: 600px;
     background-color: white;
@@ -262,10 +267,12 @@
 }
 
 .image{
-    background-color: ;
+    
     width: 40%;
 
 }
+
+
 
 .image img{
     width: 100%;
@@ -379,6 +386,17 @@
     font-size: 15px;
     font-weight: 500;
     margin-top: 10px;
+}
+
+.description h3{
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.description p{
+    margin-top: 10px;
+    font-size: 13px;
+    margin-left: 5px;
 }
 
 .button{
