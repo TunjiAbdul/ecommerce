@@ -198,5 +198,9 @@
             window.location.href = 'cartpage2.html';
         }
     };
+
+    let shoppingCart = []
+    localStorage.setItem("items", JSON.stringify(shoppingCart))
+    document.getElementById("count").innerText= shoppingCart.length;
 </script>
 </html>

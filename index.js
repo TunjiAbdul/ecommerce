@@ -5,9 +5,10 @@
                 let cartProduct = JSON.stringify(products[vlad]);
                 localStorage.setItem("item", cartProduct);
                 window.location.href = 'cartpage.html';
+               
     };
 
-    fetch( "http://localhost:3000/user")
+    fetch( "jumia.json")
     .then((response) => response.json())
     .then((data) => {
         products = data.user
@@ -31,6 +32,14 @@
             
         })
     }) ;
+
+
+    shoppingCart = []
+    localStorage.setItem("item", JSON.stringify(shoppingCart))
+    document.getElementById("count").innerText= shoppingCart.length;
+
+
+   
 
     let sign = document.getElementById("signIn")
     sign.addEventListener('click', function(){

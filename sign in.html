@@ -165,10 +165,12 @@
 
         if (input.value === ""){
             alert("Input cannot be empty")
-        } 
+        } else if (arr.find((elem) => (elem.email === input.value))) {
+            alert("An account already exist with this email, kindly input another.")
+        }
         else{
             let cont = {
-                input:input.value
+                email: input.value
             }
 
             if ( pageChecker ) {
@@ -176,10 +178,12 @@
                 arr.push(cont);
                 let newArr = JSON.stringify(arr)
                 localStorage.setItem("firstInfo", newArr);
+                localStorage.removeItem("pageChecker");
             } else {
                 arr.push(cont);
                 let newArr = JSON.stringify(arr)
                 localStorage.setItem("firstInfo", newArr);
+                localStorage.removeItem("pageChecker");
             }
             window.location.href = "create account.html"
         }

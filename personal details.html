@@ -148,15 +148,27 @@
         }
         else{
             let personalDetails = {
-            firstName:firstName.value,
-            lastName:lastName.value,
-            phoneNumber:phoneNumber.value
-        }
-        array.push(personalDetails)
-        let details = JSON.stringify(array)
-        localStorage.setItem("firstInfo", details);
-        alert("Your account has been created Successfully!")
-        window.location.href = "index.html"
+                firstName:firstName.value,
+                lastName:lastName.value,
+                phoneNumber:phoneNumber.value
+            }
+            let utilObj = {...personalDetails, ...array[0]};
+            let utilArr = [utilObj, ...array];
+            let monitor = [];
+            utilArr.forEach((obj) => {
+                let checker = monitor.filter((elem) => (
+                    elem.email === obj.email
+                ));
+
+                if (checker.length <= 0) {
+                    monitor.push(obj);
+                }
+            });
+            console.log(monitor, 00);
+            let details = JSON.stringify(monitor)
+            localStorage.setItem("firstInfo", details);
+            alert("Your account has been created Successfully!")
+            window.location.href = "index.html"
         }
         
 

@@ -183,7 +183,22 @@
     let btn2 = document.getElementById("btn2")
     let btn3 = document.getElementById("btn3")
     let btn4 = document.getElementById("btn4")
-    let array = JSON.parse(localStorage.getItem("firstInfo")) || []
+    let array = JSON.parse(localStorage.getItem("firstInfo")) || [];
+
+    const crypto = window.crypto;
+    function generateBitToken () {
+        if (crypto) {
+            let password = "";
+            let char = "0123456789";
+            let charlen = char.length;
+            for (let index = 0; index < 8; index++) {
+                password += char.charAt(Math.floor(Math.random() * 8));
+            }
+            return password;
+        } else if (!crypto) {
+            return null
+        }
+    }
 
     const show =()=>{
         btn1.style.display = "none"
@@ -210,7 +225,7 @@
     }
 
     let savedEmail = JSON.parse(localStorage.getItem("firstInfo"))
-    email.innerHTML += `${savedEmail[savedEmail.length - 1].input} <button class="edit" onclick=handlePageCheck()>Edit</button>`
+    email.innerHTML += `${savedEmail[savedEmail.length - 1].email} <button class="edit" onclick=handlePageCheck()>Edit</button>`
 
     function handlePageCheck () {
         sessionStorage.setItem("pageChecker", "true");
@@ -226,12 +241,24 @@
             alert("Password does not match")
         }
         else{
-            let pass ={
-                input2:input2.value,
-                input3:input3.value
+            let pass = {
+                passcode: input2.value,
+                id: generateBitToken()
             }
-            array.push(pass)
-            let confirmedPassword = JSON.stringify(array)
+            let utilObj = {...pass, ...array[array.length - 1]};
+            let utilArr = [utilObj, ...array];
+            let monitor = [];
+            utilArr.forEach((obj) => {
+                let checker = monitor.filter((elem) => (
+                    elem.email === obj.email
+                ));
+
+                if (checker.length <= 0) {
+                    monitor.push(obj);
+                }
+            });
+            console.log(monitor);
+            let confirmedPassword = JSON.stringify(monitor)
             localStorage.setItem("firstInfo", confirmedPassword);
             alert("Password saved successfully")
             isLoggedIn= true;
