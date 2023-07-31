@@ -8,7 +8,7 @@
                
     };
 
-    fetch( "jumia.json")
+    fetch("http://localhost:3000/user")
     .then((response) => response.json())
     .then((data) => {
         products = data.user
