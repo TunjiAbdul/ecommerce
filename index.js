@@ -34,9 +34,9 @@
     }) ;
 
 
-    shoppingCart = []
-    localStorage.setItem("item", JSON.stringify(shoppingCart))
-    document.getElementById("count").innerText= shoppingCart.length;
+    // shoppingCart = []
+    // localStorage.setItem("item", JSON.stringify(shoppingCart))
+    // document.getElementById("count").innerText= shoppingCart.length;
 
 
    
@@ -50,7 +50,7 @@
     // document.getElementById("count").innerText= shoppingCart.length;
 
 
-    let p = document.getElementById("p");
-    let savedUser = localStorage.getItem("firstInfo");
+    // let p = document.getElementById("p");
+    // let savedUser = localStorage.getItem("firstInfo");
 
-    p.innerHTML = `Hi ${savedUser.firstName}` 
+    // p.innerHTML = `Hi ${savedUser.firstName}` 
