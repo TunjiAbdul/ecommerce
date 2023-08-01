@@ -1,5 +1,5 @@
     let firstColumn = document.getElementById("firstColumn");
-    let products = {};
+    let products = [];
     let utilItem = localStorage.getItem("items");
     function cartItem (vlad) {
                 let cartProduct = JSON.stringify(products[vlad]);
@@ -13,8 +13,8 @@
     .then((data) => {
         products = data.user
         localStorage.setItem("allProducts", JSON.stringify(products))
-        // console.log(products)
-        products.map((e, idx) => {
+        console.log(products)
+        products.map((e, idx) => (
             firstColumn.innerHTML += 
             `<div onclick="cartItem(${idx})" id="display">
                 <div class="imageCard">
@@ -30,7 +30,7 @@
                 </div>
             </div> `
             
-        })
+        ))
     }) ;
 
 
