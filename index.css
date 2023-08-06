@@ -80,7 +80,8 @@
 .div input{
     height: 40px;
     width: 500px;
-    border: 1px solid black;
+    border: 1px solid #f28a31;
+    border-radius: 5px;
     outline: none;
     padding-inline: 30px;
     font-size: 17px;
@@ -111,6 +112,25 @@
     background-color: #d56e14;
 }
 
+/* .acc1{
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 1px;
+    margin-left: px;
+    color: #000000d4;
+}
+
+.acc1:hover{
+    color: #f28a31;
+    background-color: #80808048;
+    transition: 1s;
+    border-radius: 5px;
+} */
+
+
 .acc{
     display: flex;
     align-items: center;
@@ -119,16 +139,34 @@
     cursor: pointer;
     /* height: 50px; */
     padding:10px;
-    color: black;
+    color: #000000d4;
+    
+    
 }
 
 .acc:hover{
     color: #f28a31;
     background-color: #80808048;
+    transition: 1s;
+    border-radius: 5px;
+}
+
+.ppp{
+    font-size: 18px;
+    color: #000000dd;
+    padding:10px;
+}
+
+.ppp:hover{
+    color: #f28a31;
+    background-color: #80808048;
+    transition: 1s;
+    border-radius: 5px
 }
 
 .acc i{
     font-size: 18px;
+    /* color: #000000a0; */
 }
 
 .inner{
@@ -141,7 +179,7 @@
 }
 
 .sign{
-    height: 75px;
+    height: 125px;
     border-bottom: 2px solid #80808048;
 }
 
@@ -151,8 +189,8 @@
     position: absolute;
     width: 16%;
     padding-inline: px;
-    height: 210px;
-    margin-top: 3px;
+    height: 255px;
+    margin-top: px;
     margin-left: -30px;
     border-radius: 5px;
     display: none;

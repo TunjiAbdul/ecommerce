@@ -8,7 +8,7 @@
                
     };
 
-    fetch("http://localhost:3000/user")
+    fetch(" http://localhost:3000/user")
     .then((response) => response.json())
     .then((data) => {
         products = data.user
@@ -24,7 +24,7 @@
                     <h3>${e.title} </h3>
                     
                     <div class="bottomsect">
-                        <div class="price">₦ ${e.price}</div>
+                        <div class="price">₦ ${e.price.toLocaleString()}</div>
                        
                     </div>
                 </div>
@@ -33,13 +33,66 @@
         ))
     }) ;
 
-
-    // shoppingCart = []
-    // localStorage.setItem("item", JSON.stringify(shoppingCart))
-    // document.getElementById("count").innerText= shoppingCart.length;
-
-
-   
+    let welcome = document.getElementById("welcome")
+    let activeUser = sessionStorage.getItem("current_loggedUser");
+    
+    if (!activeUser) {
+        welcome.innerHTML += `
+        <div class="acc">
+            <i class="icofont-ui-user"></i>
+            <P >Account</P><i id="up" class="icofont-rounded-down"></i>                        
+        </div>
+        <div class="signing">
+        <div class="sign">
+            <button onclick="signIn()" id="signIn">SIGN UP</button>
+            <a href="login.html">
+                <button>LOG IN</button>
+            </a>
+        </div>
+        <div class="my">
+            <i class="icofont-user-alt-3"></i>
+            <P>My Account</P>
+        </div>
+        <div class="my">
+            <i class="icofont-briefcase-1"></i>
+            <p>Orders</p>
+        </div>
+        <div class="my">
+            <i class="icofont-ui-love"></i>
+            <p>Saved Items</p>
+        </div>
+    </div>`
+    } else {
+        activeUser = JSON.parse(activeUser);
+        welcome.innerHTML += 
+        `<p class="ppp"> <i class="icofont-ui-user"></i> Welcome, ${activeUser.firstName}</p>
+         <div class="signing">
+                    <div class="sign">
+                        <a href="login.html">
+                            <button onclick="logout()">LOG OUT</button>
+                        </a>
+                    </div>
+                    <div class="my">
+                        <i class="icofont-user-alt-3"></i>
+                        <P>My Account</P>
+                    </div>
+                    <div class="my">
+                        <i class="icofont-briefcase-1"></i>
+                        <p>Orders</p>
+                    </div>
+                    <div class="my">
+                        <i class="icofont-ui-love"></i>
+                        <p>Saved Items</p>
+                    </div>
+                </div>
+        `
+    }
+    
+    const logout =()=>{
+        alert("Are you sure you want to LOG OUT?")
+        sessionStorage.removeItem("current_loggedUser");
+       
+    }
 
     let sign = document.getElementById("signIn")
     sign.addEventListener('click', function(){
@@ -50,7 +103,7 @@
     // document.getElementById("count").innerText= shoppingCart.length;
 
 
-    // let p = document.getElementById("p");
-    // let savedUser = localStorage.getItem("firstInfo");
-
-    // p.innerHTML = `Hi ${savedUser.firstName}` 
+    // shoppingCart = []
+    // localStorage.setItem("item", JSON.stringify(shoppingCart))
+    // document.getElementById("count").innerText= shoppingCart.length;
+     

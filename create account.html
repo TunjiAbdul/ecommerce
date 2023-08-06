@@ -104,20 +104,23 @@
 
     #btn1{
         margin-left: -50px ;
+        color: #00000088;
     }
     #btn2{
         margin-left: -50px;
         display: none;
-
+        color: #00000088;
     }
 
     #btn3{
         margin-left: -50px;
+        color: #00000088;
     }
 
     #btn4{
         margin-left: -50px;
         display: none;
+        color: #00000088;
     }
 
     .sub-cont > button{
@@ -247,6 +250,7 @@
             }
             let utilObj = {...pass, ...array[array.length - 1]};
             let utilArr = [utilObj, ...array];
+            console.log(utilArr);
             let monitor = [];
             utilArr.forEach((obj) => {
                 let checker = monitor.filter((elem) => (
@@ -258,11 +262,11 @@
                 }
             });
             console.log(monitor);
-            let confirmedPassword = JSON.stringify(monitor)
-            localStorage.setItem("firstInfo", confirmedPassword);
-            alert("Password saved successfully")
-            isLoggedIn= true;
-            window.location.href = "personal details.html"
+            // let confirmedPassword = JSON.stringify(monitor)
+            // localStorage.setItem("firstInfo", confirmedPassword);
+            // alert("Password saved successfully")
+            // isLoggedIn= true;
+            // window.location.href = "personal details.html"
         }
     }
 

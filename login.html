@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>LogIn</title>
+    <link rel="stylesheet" href="icofont/icofont.min.css">
 </head>
 <style>
  
@@ -59,19 +60,17 @@
         font-size: 17px
     }
 
-    #email{
-        height: 25px;
+    .details button{
+        font-size: 20px;
+        /* margin-left: -50px; */
         border: none;
-        background-color: #80808028;
-        padding: 5px;
-        font-size: 15px;
-        padding: 15px;
-        display: flex;
+        background-color: white;
+        
     }
 
-    #password{
+    #email{
         height: 40px;
-        height: 50px;
+        width: 95%;
         border: 1px solid #00000057;
         border-radius: 5px;
         padding-inline: 10px;
@@ -79,7 +78,28 @@
         outline: none;
     }
 
-    .sub-cont button{
+    #password{
+        height: 40px;
+        width: 95%;
+        border: 1px solid #00000057;
+        border-radius: 5px;
+        padding-inline: 10px;
+        font-size: 16px;
+        outline: none;
+    }
+
+    #btn1{
+        margin-left: -50px ;
+        color: #00000088;
+    }
+    #btn2{
+        margin-left: -50px;
+        display: none;
+        color: #00000088;
+
+    }
+
+    .sub-cont > button{
         height: 50px;
         border: none;
         border-radius: 5px;
@@ -90,7 +110,7 @@
     }
 
     .sub-cont > button:hover{
-        box-shadow: 0 0 15px #00000033;
+        box-shadow: 0 0 15px #00000043;
     }
 
     .sub-cont a{
@@ -101,13 +121,28 @@
         font-size: 17px
     }
 
-    .sub-cont p:nth-child(8){
+    .sub-cont p:nth-child(9){
         font-size: 17px;
         text-align: justify;
         text-align-last: center;
     }
 
-    .sub-cont img:nth-child(9){
+    .sign-in button{
+        height: 50px;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        background-color: #251304c8;
+        color: white;
+        cursor: pointer;
+    }
+   
+    .sign-in button:hover{
+        background-color: #251304bf;
+    }
+    
+    .sub-cont img:nth-child(10){
         height: 50px;
         width: 50%;
         margin-left: 100px;
@@ -120,13 +155,56 @@
             <img src="./star.png" alt="">
             <h3>Welcome back!</h3>
             <p>Log back into your Jumia account.</p>
-            <div id="email"></div>
-            <input id="password" type="password" placeholder="Password">
-            <button>Login</button>
+            <input id="email" type="email" placeholder="Email">
+            <div class="details">
+                <input id="password" type="password" placeholder="Password">
+                <button id="btn1" onclick="show()"><i class="icofont-eye"></i></button>
+                <button id="btn2" onclick="hide()"><i class="icofont-eye-blocked"></i></button>
+            </div>
+            <button onclick="logIn(event)">Login</button>
             <a href="">Forgot password?</a>
+            <a class="sign-in" href="sign in.html">
+                <button>Don't have an account? Sign Up</button>
+            </a>
             <p>For further support, you may visit The Help Center or contact our customer service team.</p>
             <img src="./jumialogo.png" alt="">
         </div>
     </div>
 </body>
+<script>
+    let email = document.getElementById("email")
+    let passcode = document.getElementById("password")
+    let btn1 = document.getElementById("btn1")
+    let btn2 = document.getElementById("btn2")
+    let allUser = JSON.parse(localStorage.getItem("firstInfo"))
+    console.log(allUser);
+
+    function logIn(ev){
+        ev.preventDefault()
+        let found = allUser.find((el)=> el.email == email.value && el.passcode == passcode.value);
+        console.log(found);
+        if(found){
+            alert("Logging in...")
+            sessionStorage.setItem("current_loggedUser",JSON.stringify(found))
+            window.location.href = "index.html"
+        }else{
+            alert("Email or Password is not correct")
+        }
+    }
+
+
+
+
+    const show =()=>{
+        btn1.style.display = "none"
+        btn2.style.display = "inline"
+        password.type = "text"
+    }
+
+    const hide =()=>{
+        btn1.style.display = "inline"
+        btn2.style.display = "none"
+        password.type = "password"
+    }
+</script>
 </html>

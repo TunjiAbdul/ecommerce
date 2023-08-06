@@ -151,8 +151,8 @@
                     <h3>${product.title}</h3>
                     <div class="line2"></div>
                     <div class="price">
-                        <h3>₦ ${product.price}</h3>
-                        <p>₦ ${product.oldPrice}</p>
+                        <h3>₦ ${product.price.toLocaleString()}</h3>
+                        <p>₦ ${product.oldPrice.toLocaleString()}</p>
                         <button>${product.discount}</button>
                     </div>
                     <p>Some variations with low stock</p>
@@ -180,18 +180,19 @@
     })
     let utilItems = JSON.parse(localStorage.getItem("items") )|| [];
     let utilItem = JSON.parse(localStorage.getItem("item"));
+    let activeUser = JSON.parse(sessionStorage.getItem("current_loggedUser"));
 
 
     
     function addToCart(){
-        let finder = utilItems.find((elem) => (elem.title === utilItem.title));
+        let finder = utilItems.find((elem) => (elem.title === utilItem.title && elem.userId === activeUser?.id));
         console.log(finder);
         if (finder) {
             window.location.href = 'cartpage2.html';
         } else {
             let utilObj = utilItem;
             if (!utilItem.counter) {
-                utilObj = {...utilItem, counter: 1}
+                utilObj = {...utilItem, counter: 1, userId: activeUser?.id}
             }
             let utilArr = [...utilItems, utilObj];
             localStorage.setItem( "items",JSON.stringify(utilArr));

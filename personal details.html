@@ -167,8 +167,9 @@
             console.log(monitor, 00);
             let details = JSON.stringify(monitor)
             localStorage.setItem("firstInfo", details);
-            alert("Your account has been created Successfully!")
-            window.location.href = "index.html"
+            sessionStorage.setItem("current_loggedUser", JSON.stringify(utilObj));
+            alert("Your account has been created Successfully!");
+            window.location.href = "index.html";
         }
         
 

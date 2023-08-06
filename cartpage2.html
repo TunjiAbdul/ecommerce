@@ -114,6 +114,45 @@
                 
             </div>
         </div>
+
+        <div class="popup-container" id="popupContainer">
+            <div class="popup-content">
+              <h3>ADD DELIVERY INFORMATION</h3>
+              <div class="lin"></div>
+              <div class="content">
+                <!-- <h4>Add New Address:</h4> -->
+                <div class="firstInput">
+                    <input id="firstName" type="text" placeholder="First Name">
+                    <input id="secondName" type="text" placeholder="Last Name">
+                </div>
+                <div class="telephone">
+                    <div class="telephone1">
+                        <div class="prefix">
+                            <p>Prefix</p>
+                            <p>+234</p>
+                        </div>
+                        <input id="firstNumber" type="number" placeholder="Phone Number">
+                    </div>
+                    <div class="telephone1">
+                        <div class="prefix">
+                            <p>Prefix</p>
+                            <p>+234</p>
+                        </div>
+                        <input id="secondNumber" type="number" placeholder="Phone Number">
+                    </div>
+                </div>
+                <div class="lonelyMfs">
+                    <input id="deliveryAddress" type="text" placeholder="Delivery Address">
+                    <input id="additionalInfo" type="text" placeholder="Additional Information (Optional)">
+                </div>
+                <div class="region">
+                    <input id="region" type="text" placeholder="Region">
+                    <input id="city" type="text" placeholder="City">
+                </div>
+              </div> 
+              <button id="close" onclick="closePopup()">Proceed To Make Payment With PayStack</button>
+            </div>
+        </div>
     </div>
    
 </body>
@@ -122,7 +161,10 @@
     let itemContainer = document.getElementById("leftCont");
     let subTotaltext = document.querySelector(".subT")
     let Totaltext = document.querySelector(".total")
-    let shoppingCart= []
+    const activeUser = JSON.parse(sessionStorage.getItem("current_loggedUser"));
+
+    let shoppingCart= [];
+    let filterer = [];
     
     function clearLS () {
         localStorage.clear("item");
@@ -131,29 +173,56 @@
 
     function summer() {
         let totalSum = 0;
-        shoppingCart.forEach((elem) => {
+        filterer.forEach((elem) => {
             totalSum = totalSum + (elem.price*elem.counter);
-            console.log(totalSum);
         })
         return totalSum;
     }
 
     function priceIncrement(vlad) {
-        if (shoppingCart[vlad].counter <= 9) {
-            shoppingCart[vlad].counter = shoppingCart[vlad].counter + 1;
-            console.log(shoppingCart[vlad].counter);
+        if (filterer[vlad].counter <= 9) {
+            filterer[vlad].counter = filterer[vlad].counter + 1;
+            console.log(filterer[vlad].counter);
+
+            let utilArr = [...filterer, ...shoppingCart];
+            let monitor = [];
+            utilArr.forEach((obj) => {
+                let checker = monitor.filter((elem) => (
+                    elem.title === obj.title && elem.userId === activeUser?.id
+                ));
+
+                if (checker.length <= 0) {
+                    monitor.push(obj);
+                }
+            });
 
             localStorage.setItem("items", JSON.stringify(shoppingCart));
+            console.log(monitor, "+");
+            console.log(monitor[vlad].counter);
             renderer();
         }
     }
 
     function priceDecrement(vlad) {
-        if (shoppingCart[vlad].counter >= 2) {
-            shoppingCart[vlad].counter = shoppingCart[vlad].counter - 1;
-            console.log(shoppingCart[vlad].counter);
+        if (filterer[vlad].counter >= 2) {
+            filterer[vlad].counter = filterer[vlad].counter - 1;
+            console.log(filterer[vlad].counter);
+
+            let utilArr = [...filterer, ...shoppingCart];
+            let monitor = [];
+            utilArr.forEach((obj) => {
+                let checker = monitor.filter((elem) => (
+                    elem.title === obj.title && elem.userId === activeUser?.id
+                ));
+
+                if (checker.length <= 0) {
+                    monitor.push(obj);
+                }
+            });
 
             localStorage.setItem("items", JSON.stringify(shoppingCart));
+            console.log(monitor, "+");
+            console.log(monitor[vlad].counter);
             renderer();
         }
     }
@@ -168,7 +237,6 @@
 
         //filter method
         console.log(shoppingCart);
-        console.log(idx);
         let utilArr = shoppingCart.filter((elem) => (
             elem.title !== shoppingCart[idx].title
         ));
@@ -181,15 +249,19 @@
 
     function renderer () {
         const cartProductsJSON = localStorage.getItem("items");
+        shoppingCart = JSON.parse(cartProductsJSON);
+        
+        filterer = shoppingCart.filter((elem) => (
+            elem.userId === activeUser?.id
+        ));
         if (cartProductsJSON){
-                shoppingCart = JSON.parse(cartProductsJSON);
-                console.log(shoppingCart)
+
                 itemContainer.innerHTML = `<div class="cart">
                         <h3>Cart</h3>
                         (<p id="counting"></p>)
                     </div>`
-                    if(shoppingCart.length > 0){
-                        shoppingCart.map((ele, idx) => (
+                    if(filterer.length > 0){
+                        filterer.map((ele, idx) => (
                             itemContainer.innerHTML +=
                                 `
                                     <div class="itemCntn">
@@ -209,7 +281,7 @@
                                                             
                                             </div>
                                             <div class="cartCost">
-                                                <p>₦ ${ele.price}</p>
+                                                <p>₦ ${ele.price.toLocaleString()}</p>
                                             </div>
                                         </div>
                                         <div class="remove">
@@ -241,46 +313,73 @@
                     }
 
         }            
-        subTotaltext.innerText = `₦ ${summer()}`
-        Totaltext.innerText = `CHECKOUT ( ₦ ${summer()} )`
+        subTotaltext.innerText = `₦ ${summer().toLocaleString()}`
+        Totaltext.innerText = `CHECKOUT ( ₦ ${summer().toLocaleString()} )`
             
            
-        document.getElementById("count").innerText= shoppingCart.length;
-        document.getElementById("counting").innerText= shoppingCart.length;
+        document.getElementById("count").innerText= filterer.length;
+        document.getElementById("counting").innerText= filterer.length;
          
     };
 
     renderer();
 
-    const paystack = new PaystackPop();
-    function checkout(){
-        paystack.newTransaction({
-            key: 'pk_test_b67fe7915d142f38c397909288fc3c763dc669ab',
-            email: 'example@email.com',
-            amount: 10000,
-            onSuccess: (transaction) => { 
-                alert("transaction Complete") 
-            },
-            onCancel: () => {
-                alert("Transaction Failed")
-            }
-        });
+    let firstName = document.getElementById("firstName");
+    let secondName = document.getElementById("secondName");
+    let firstNumber = document.getElementById("firstNumber");
+    let secondNumber = document.getElementById("secondNumber");
+    let deliveryAddress = document.getElementById("deliveryAddress");
+    let additionalInfo  = document.getElementById("additionalInfo");
+    let region = document.getElementById("region");
+    let city = document.getElementById("city");
+    let currentUser = sessionStorage.getItem("current_loggedUser");
+   
+    function checkout() {
+        if (!currentUser){
+            alert("Log In To CheckOut")
+            window.location.href = "login.html"
+        }else{
+            var popup = document.getElementById('popupContainer');
+            popup.style.display = 'block';
+        }
+       
     }
 
+    function closePopup() {
+        if(firstName.value == ""){
+            alert("Inputs Cannot Be Empty")
+        } else if(secondName.value === ""){
+            alert("Inputs Cannot Be Empty")
+        } else if (firstNumber.value === ""){
+            alert("Inputs Cannot Be Empty")
+        } else if(secondNumber.value === ""){
+            alert("Inputs Cannot Be Empty")
+        } else if (deliveryAddress.value === ""){
+            alert("Inputs Cannot Be Empty")
+        } else if (region.value === ""){
+            alert("Inputs Cannot Be Empty")
+        } else if (city.value === ""){
+            alert("Inputs Cannot Be Empty")
+        } else{
+            
+            var popup = document.getElementById('popupContainer');
+            popup.style.display = 'none'; 
+            const paystack = new PaystackPop();     
+            paystack.newTransaction({
+                key: 'pk_test_b67fe7915d142f38c397909288fc3c763dc669ab',
+                email: 'example@email.com',
+                amount: 10000,
+                onSuccess: (transaction) => { 
+                    alert("transaction Complete") 
+                },
+                onCancel: () => {
+                    alert("Transaction Failed")
+                }
+            });
+        }
 
-    
-    
-
-
-    // function add(price){
-    //     return price + 1
-    // }
-    
-    // const addup = add(1)
-    
-    // console.log(addup)
-
-    
+    }
+  
 
 </script>
 </html>
