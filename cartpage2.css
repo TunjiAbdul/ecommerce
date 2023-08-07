@@ -118,7 +118,7 @@
     cursor: pointer;
     /* height: 50px; */
     padding:10px;
-    color: #000000d4;
+    color: #000000d4;   
 }
 
 .acc:hover{
@@ -128,9 +128,22 @@
     border-radius: 5px;
 }
 
+#ppp{
+    font-size: 18px;
+    color: #000000dd;
+    padding:10px;
+}
+
+#ppp:hover{
+    color: #f28a31;
+    background-color: #80808048;
+    transition: 1s;
+    border-radius: 5px
+}
+
 .acc i{
     font-size: 18px;
-    /* color: #0000009e; */
+    /* color: #000000a0; */
 }
 
 .inner{
@@ -143,8 +156,13 @@
 }
 
 .sign{
-    height: 75px;
+    height: 125px;
     border-bottom: 2px solid #80808048;
+}
+
+
+#longSign{
+    height: 205px;
 }
 
 .signing{
@@ -153,8 +171,8 @@
     position: absolute;
     width: 16%;
     padding-inline: px;
-    height: 210px;
-    margin-top: 3px;
+    height: 255px;
+    margin-top: px;
     margin-left: -30px;
     border-radius: 5px;
     display: none;
@@ -176,6 +194,11 @@
 
 }
 
+#logout{
+    height: 75px;
+    border-bottom: 2px solid #80808048;    
+}
+
 .my{
     display: flex;
     align-items: center;
@@ -192,7 +215,6 @@
 .my:hover{
     background-color: #80808048;
     font-size: 19px;
-   
 
 }
 

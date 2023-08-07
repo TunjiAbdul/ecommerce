@@ -125,21 +125,38 @@
     gap: 5px;
     font-size: 20px;
     cursor: pointer;
+    /* height: 50px; */
     padding:10px;
-    color: #000000d4;
+    color: #000000d4;   
 }
 
 .acc:hover{
     color: #f28a31;
     background-color: #80808048;
+    transition: 1s;
+    border-radius: 5px;
+}
+
+.pppp{
+    font-size: 18px;
+    color: #000000dd;
+    padding:10px;
+}
+
+.pppp:hover{
+    color: #f28a31;
+    background-color: #80808048;
+    transition: 1s;
+    border-radius: 5px
 }
 
 .acc i{
     font-size: 18px;
-    /* color: #0000009e; */
+    /* color: #000000a0; */
 }
 
 .inner{
+    /* position: relative; */
     display: inline-block;
 }
 
@@ -148,18 +165,23 @@
 }
 
 .sign{
-    height: 75px;
+    height: 125px;
     border-bottom: 2px solid #80808048;
 }
 
+
+#longSign{
+    height: 205px;
+}
+
 .signing{
-    background-color: white;
+    background-color: whitesmoke;
     z-index: 22;
     position: absolute;
     width: 16%;
     padding-inline: px;
-    height: 210px;
-    margin-top: 3px;
+    height: 255px;
+    margin-top: px;
     margin-left: -30px;
     border-radius: 5px;
     display: none;
@@ -181,6 +203,11 @@
 
 }
 
+#logout{
+    height: 75px;
+    border-bottom: 2px solid #80808048;    
+}
+
 .my{
     display: flex;
     align-items: center;
@@ -199,7 +226,6 @@
     font-size: 19px;
 
 }
-
 .helpDrop{
     background-color: white;
     z-index: 22;
@@ -281,7 +307,6 @@
 }
 
 .details{
-    background-color: ;
     width: 60%;
 }
 

@@ -230,7 +230,7 @@
     let savedEmail = JSON.parse(localStorage.getItem("firstInfo"))
     email.innerHTML += `${savedEmail[savedEmail.length - 1].email} <button class="edit" onclick=handlePageCheck()>Edit</button>`
 
-    function handlePageCheck () {
+    function handlePageCheck(){
         sessionStorage.setItem("pageChecker", "true");
         window.location.href = "sign in.html"
     }
@@ -261,12 +261,13 @@
                     monitor.push(obj);
                 }
             });
+            
             console.log(monitor);
-            // let confirmedPassword = JSON.stringify(monitor)
-            // localStorage.setItem("firstInfo", confirmedPassword);
-            // alert("Password saved successfully")
-            // isLoggedIn= true;
-            // window.location.href = "personal details.html"
+            let confirmedPassword = JSON.stringify(monitor)
+            localStorage.setItem("firstInfo", confirmedPassword);
+            alert("Password saved successfully")
+            isLoggedIn= true;
+            window.location.href = "personal details.html"
         }
     }
 

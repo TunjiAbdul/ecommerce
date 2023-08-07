@@ -65,9 +65,9 @@
     } else {
         activeUser = JSON.parse(activeUser);
         welcome.innerHTML += 
-        `<p class="ppp"> <i class="icofont-ui-user"></i> Welcome, ${activeUser.firstName}</p>
-         <div class="signing">
-                    <div class="sign">
+        `<p class="ppp"> <i class="icofont-ui-user"></i> Hi, ${activeUser.firstName}</p>
+         <div id="longSign" class="signing">
+                    <div id="logout" class="sign">
                         <a href="login.html">
                             <button onclick="logout()">LOG OUT</button>
                         </a>

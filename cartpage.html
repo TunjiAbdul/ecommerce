@@ -41,16 +41,14 @@
                 <i class="icofont-search-2"></i>
                 <button>SEARCH</button>
             </div>
-            <div class="inner">
-                <div class="acc">
-                    <i class="icofont-ui-user"></i>
-                    <p>Account</p>
-                    <i id="up" class="icofont-rounded-down"></i>
-                    <!-- <i id="down" class="icofont-rounded-up"></i> -->
-                </div>
-                <div class="signing">
+            <div id="welcome" class="inner">
+                
+                <!-- <div class="signing">
                     <div class="sign">
-                        <button>SIGN IN</button>
+                        <button onclick="signIn()" id="signIn">SIGN UP</button>
+                        <a href="login.html">
+                            <button>LOG IN</button>
+                        </a>
                     </div>
                     <div class="my">
                         <i class="icofont-user-alt-3"></i>
@@ -64,7 +62,7 @@
                         <i class="icofont-ui-love"></i>
                         <p>Saved Items</p>
                     </div>
-                </div>
+                </div> -->
             </div>
             <div class="help">
                 <div class="acc">
@@ -199,6 +197,67 @@
             window.location.href = 'cartpage2.html';
         }
     };
+
+    let welcome = document.getElementById("welcome")
+    let currentUser = sessionStorage.getItem("current_loggedUser");
+    
+    if (!currentUser) {
+        welcome.innerHTML += `
+        <div class="acc">
+            <i class="icofont-ui-user"></i>
+            <P >Account</P><i id="up" class="icofont-rounded-down"></i>                        
+        </div>
+        <div class="signing">
+        <div class="sign">
+            <button onclick="signIn()" id="signIn">SIGN UP</button>
+            <a href="login.html">
+                <button>LOG IN</button>
+            </a>
+        </div>
+        <div class="my">
+            <i class="icofont-user-alt-3"></i>
+            <P>My Account</P>
+        </div>
+        <div class="my">
+            <i class="icofont-briefcase-1"></i>
+            <p>Orders</p>
+        </div>
+        <div class="my">
+            <i class="icofont-ui-love"></i>
+            <p>Saved Items</p>
+        </div>
+        </div>`
+    } else {
+        currentUser = JSON.parse(currentUser);
+        welcome.innerHTML += 
+        `<p class="pppp"> <i class="icofont-ui-user"></i> Hi, ${currentUser.firstName}</p>
+           <div id="longSign" class="signing">
+                    <div id="logout" class="sign">
+                        <a href="login.html">
+                            <button onclick="logout()">LOG OUT</button>
+                        </a>
+                    </div>
+                    <div class="my">
+                        <i class="icofont-user-alt-3"></i>
+                        <P>My Account</P>
+                    </div>
+                    <div class="my">
+                        <i class="icofont-briefcase-1"></i>
+                        <p>Orders</p>
+                    </div>
+                    <div class="my">
+                        <i class="icofont-ui-love"></i>
+                        <p>Saved Items</p>
+                    </div>
+           </div>
+        `
+    }
+    
+    const logout =()=>{
+        alert("Are you sure you want to LOG OUT?")
+        sessionStorage.removeItem("current_loggedUser");
+       
+    }
 
     // let shoppingCart = []
     // localStorage.setItem("items", JSON.stringify(shoppingCart))

@@ -112,25 +112,6 @@
     background-color: #d56e14;
 }
 
-/* .acc1{
-    width: 100%;
-    display: flex;
-    gap: 5px;
-    font-size: 20px;
-    cursor: pointer;
-    padding: 1px;
-    margin-left: px;
-    color: #000000d4;
-}
-
-.acc1:hover{
-    color: #f28a31;
-    background-color: #80808048;
-    transition: 1s;
-    border-radius: 5px;
-} */
-
-
 .acc{
     display: flex;
     align-items: center;
@@ -139,9 +120,7 @@
     cursor: pointer;
     /* height: 50px; */
     padding:10px;
-    color: #000000d4;
-    
-    
+    color: #000000d4;   
 }
 
 .acc:hover{
@@ -183,6 +162,10 @@
     border-bottom: 2px solid #80808048;
 }
 
+#longSign{
+    height: 205px;
+}
+
 .signing{
     background-color: whitesmoke;
     z-index: 22;
@@ -210,6 +193,11 @@
     color: white;
     font-size: 18px;
 
+}
+
+#logout{
+    height: 75px;
+    border-bottom: 2px solid #80808048;    
 }
 
 .my{
