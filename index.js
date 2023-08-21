@@ -8,7 +8,7 @@
                
     };
 
-    fetch(" http://localhost:3000/user")
+    fetch("https://dummyjson.com/products")
     .then((response) => response.json())
     .then((data) => {
         products = data.user
